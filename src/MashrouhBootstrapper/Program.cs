@@ -1,33 +1,61 @@
-﻿using Newtonsoft.Json;
-using MashrouhBootstrapper.Channels;
-using MashrouhBootstrapper.Models;
+﻿using MashrouhBootstrapper;
+using System.CommandLine;
+using MashrouhBootstrapper.Helpers.Enums;
 
-Catalogue catalogue = new();
-catalogue.Channels = new();
+// Create some options:
+var minifyOption = new Option<bool>(
+    new[] { "--minify", "-m" },
+    getDefaultValue: () => true,
+    "To avoid minification, set the value to false.");
+var bundleOption = new Option<string>(
+    new[] { "--bundle", "-b" },
+    getDefaultValue: () => "./catalogue.json",
+    "Output file path for bundled catalogue.");
+var iransedaOption = new Option<string?>(
+    new[] { "--iranseda", "-i" },
+    getDefaultValue: () => null,
+    "An option whose argument is parsed as a string array");
 
-IransedaChannel iransedaChannel = new();
-var channel = iransedaChannel.Retrieve();
-catalogue.Channels.Add(channel);
-
-catalogue.ReleaseDate = DateTime.UtcNow;
-
-JsonSerializerSettings jsonSetting = new()
+// Add the options to a root command:
+var rootCommand = new RootCommand
 {
-    NullValueHandling = NullValueHandling.Ignore,
-    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-    Formatting = Formatting.Indented,
+    minifyOption,
+    bundleOption,
+    iransedaOption
 };
 
-JsonSerializerSettings jsonMinifiedSetting = new()
-{
-    NullValueHandling = NullValueHandling.Ignore,
-    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-    Formatting = Formatting.None,
-};
+rootCommand.Description = "Mashrouh Bootstrapper";
 
-File.WriteAllText(
-    path: Path.Combine(Environment.CurrentDirectory, "catalogue.json"),
-    contents: JsonConvert.SerializeObject(catalogue, jsonSetting));
-File.WriteAllText(
-    path: Path.Combine(Environment.CurrentDirectory, "catalogue.min.json"),
-    contents: JsonConvert.SerializeObject(catalogue, jsonMinifiedSetting));
+rootCommand.SetHandler((bool minify, string bundle, string iranseda) =>
+{
+    CatalogueBuilder builder = new();
+
+    if (!string.IsNullOrEmpty(iranseda))
+    {
+        builder.Iranseda();
+        CatalogueBuilder? iransedaBuilder = builder.IransedaCatalogue();
+        if (iransedaBuilder != null)
+        {
+            iransedaBuilder.Catalogue.ReleaseDate = DateTime.UtcNow;
+            iransedaBuilder.SaveCatalogue(iranseda, minify);
+        }
+    }
+
+    if (!string.IsNullOrEmpty(bundle))
+    {
+        if (builder.Catalogue.Channels == null)
+        {
+            builder.Catalogue.Channels = new();
+            builder.Iranseda();
+        }
+        if (!builder.Catalogue.Channels.Any(c => c.Type == ChannelType.Iranseda))
+            builder.Iranseda();
+
+        builder.Catalogue.ReleaseDate = DateTime.UtcNow;
+        builder.SaveCatalogue(bundle, minify);
+    }
+
+}, minifyOption, bundleOption, iransedaOption);
+
+// Parse the incoming args and invoke the handler
+return rootCommand.Invoke(args);

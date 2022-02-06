@@ -3,7 +3,6 @@ using MashrouhBootstrapper.Helpers.Enums;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using MD.PersianDateTime.Standard;
-using FileInfo = MashrouhBootstrapper.Models.FileInfo;
 
 namespace MashrouhBootstrapper.Channels
 {
@@ -35,7 +34,8 @@ namespace MashrouhBootstrapper.Channels
                 if (url != null && !string.IsNullOrEmpty(url))
                     session.Url = new(baseUri: iransedaChannel.Url, relativeUri: url);
 
-                if (PersianDateTime.TryParse(ParseDate(li.SelectSingleNode(".//div[contains(@class,'dt-title')]")), out PersianDateTime persianDateTimeResult))
+                HtmlNode dateNode = li.SelectSingleNode(".//div[contains(@class,'dt-title')]");
+                if (dateNode != null && PersianDateTime.TryParse(ParseDate(li.SelectSingleNode(".//div[contains(@class,'dt-title')]")), out PersianDateTime persianDateTimeResult))
                     session.Date = persianDateTimeResult;
 
                 HtmlNode? descriptionNode = li.SelectSingleNode(".//div[contains(@class,'explain-box')]");
@@ -57,6 +57,9 @@ namespace MashrouhBootstrapper.Channels
                 HtmlNodeCollection sectionsNode = htmlDoc.DocumentNode.SelectNodes("(//section[@id=\"taglist2\"]"
                 + "//div[contains(@class,'container')]/div[contains(@class,'row-')]/div[contains(@class,'col-')])"
                 + "[2]//article");
+
+                if (sectionsNode == null || !sectionsNode.Any())
+                    continue;
 
                 List<SectionSummary> sectionSummaries = new();
 
