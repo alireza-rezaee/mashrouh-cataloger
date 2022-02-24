@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MashrouhBootstrapper.Channels;
-using MashrouhBootstrapper.Models;
+using MashrouhCataloger.Channels;
+using MashrouhCataloger.Models;
 using Newtonsoft.Json;
-using MashrouhBootstrapper.Helpers.Enums;
+using MashrouhCataloger.Helpers.Enums;
 
-namespace MashrouhBootstrapper
+namespace MashrouhCataloger
 {
     public class CatalogueBuilder
     {

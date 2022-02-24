@@ -1,10 +1,10 @@
-using MashrouhBootstrapper.Models;
-using MashrouhBootstrapper.Helpers.Enums;
+using MashrouhCataloger.Models;
+using MashrouhCataloger.Helpers.Enums;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using MD.PersianDateTime.Standard;
 
-namespace MashrouhBootstrapper.Channels
+namespace MashrouhCataloger.Channels
 {
     internal class IransedaChannel
     {

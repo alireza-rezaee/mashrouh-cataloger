@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MD.PersianDateTime.Standard;
 
-namespace MashrouhBootstrapper.Models
+namespace MashrouhCataloger.Models
 {
     public class Session
     {

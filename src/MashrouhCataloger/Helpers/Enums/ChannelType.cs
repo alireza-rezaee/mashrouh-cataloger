@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace MashrouhBootstrapper.Helpers.Enums
+namespace MashrouhCataloger.Helpers.Enums
 {
     public enum ChannelType
     {

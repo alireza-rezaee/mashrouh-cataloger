@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MashrouhBootstrapper.Channels;
+using MashrouhCataloger.Channels;
 
-namespace MashrouhBootstrapper.Models
+namespace MashrouhCataloger.Models
 {
     public class Catalogue
     {

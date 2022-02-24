@@ -1,6 +1,6 @@
-﻿using MashrouhBootstrapper;
+﻿using MashrouhCataloger;
 using System.CommandLine;
-using MashrouhBootstrapper.Helpers.Enums;
+using MashrouhCataloger.Helpers.Enums;
 
 // Create some options:
 var minifyOption = new Option<bool>(
@@ -24,7 +24,7 @@ var rootCommand = new RootCommand
     iransedaOption
 };
 
-rootCommand.Description = "Mashrouh Bootstrapper";
+rootCommand.Description = "Mashrouh Cataloger";
 
 rootCommand.SetHandler((bool minify, string bundle, string iranseda) =>
 {

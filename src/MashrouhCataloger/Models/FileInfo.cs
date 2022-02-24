@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MashrouhBootstrapper.Models
+namespace MashrouhCataloger.Models
 {
     public class FileInfo
     {

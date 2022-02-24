@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace MashrouhBootstrapper.Extensions
+namespace MashrouhCataloger.Extensions
 {
     public static class EnumExtensions
     {

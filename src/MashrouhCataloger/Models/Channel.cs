@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MashrouhBootstrapper.Helpers.Enums;
-using MashrouhBootstrapper.Extensions;
+using MashrouhCataloger.Helpers.Enums;
+using MashrouhCataloger.Extensions;
 
-namespace MashrouhBootstrapper.Models
+namespace MashrouhCataloger.Models
 {
     public class Channel
     {
