@@ -1,0 +1,48 @@
+name: Deployment
+
+concurrency: 
+  group: production
+  cancel-in-progress: true
+
+on:
+  push:
+  schedule:
+    - cron: '30 20 * * *'
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+    - uses: actions/checkout@master
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.101
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Publish new catalogs
+      run: |
+        NOW=$(TZ=":Asia/Tehran" date +%F)
+        mkdir -p ./catalogs/
+        dotnet run --project ./src/MashrouhCataloger/MashrouhCataloger.csproj -- \
+          -b ./catalogs/catalog-$NOW.json \
+          -i ./catalogs/catalog-$NOW-iranseda.json
+          ln -Pf catalogs/catalog-$NOW.json catalog-latest.json
+          ln -Pf catalogs/catalog-$NOW-iranseda.json catalog-latest-iranseda.json
+    - name: Commit files
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add -A
+        git commit -m '🚀 Update Catalogs'
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}

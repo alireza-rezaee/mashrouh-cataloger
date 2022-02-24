@@ -13,8 +13,7 @@ var bundleOption = new Option<string>(
     "Output file path for bundled catalogue.");
 var iransedaOption = new Option<string?>(
     new[] { "--iranseda", "-i" },
-    getDefaultValue: () => null,
-    "An option whose argument is parsed as a string array");
+    "Output file path for iranseda catalogue.");
 
 // Add the options to a root command:
 var rootCommand = new RootCommand
