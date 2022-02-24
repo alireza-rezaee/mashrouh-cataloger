@@ -12,7 +12,7 @@ namespace MashrouhCataloger.Channels
         {
             Channel iransedaChannel = new(
                 type: ChannelType.Iranseda,
-                url: new("http://radio.iranseda.ir/Program/?VALID=TRUE&ch=16&m=065139"));
+                url: new("https://radio.iranseda.ir/Program/?VALID=TRUE&ch=16&m=065139"));
 
             iransedaChannel.ReleaseDate = DateTime.UtcNow;
 
