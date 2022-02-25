@@ -6,8 +6,11 @@
 
 </div>
 
-- » [./catalog-latest.json](./catalog-latest.json) (bundled & minified)
-- » [./catalog-latest-iranseda.json](./catalog-latest-iranseda.json) (minified, iranseda channel only)
+. bundle: [./catalog.bundle.latest.json](./catalog.bundle.latest.json) <br>
+├── minified bundle: [./catalog.bundle.latest.min.json](./catalog.bundle.latest.min.json)
+
+├── Iranseda: [./catalog.iranseda.latest.json](./catalog.iranseda.latest.json) <br>
+│   ├── minified Iranseda: [./catalog.iranseda.latest.min.json](./catalog.iranseda.latest.min.json)
 
 <div dir="rtl">
 

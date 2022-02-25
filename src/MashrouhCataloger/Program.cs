@@ -1,60 +1,72 @@
 ﻿using MashrouhCataloger;
 using System.CommandLine;
-using MashrouhCataloger.Helpers.Enums;
+using static System.Console;
 
-// Create some options:
-var minifyOption = new Option<bool>(
-    new[] { "--minify", "-m" },
-    getDefaultValue: () => true,
-    "To avoid minification, set the value to false.");
-var bundleOption = new Option<string>(
+
+// Options:
+var bundleOption = new Option<string?>(
     new[] { "--bundle", "-b" },
-    getDefaultValue: () => "./catalogue.json",
-    "Output file path for bundled catalogue.");
+    "Output file path for bundle catalogue");
+var bundleMinOption = new Option<string?>(
+    new[] { "--bundle-min", "-c" },
+    "Output file path for minified bundle catalogue");
+
 var iransedaOption = new Option<string?>(
     new[] { "--iranseda", "-i" },
-    "Output file path for iranseda catalogue.");
+    "Output file path for iranseda catalogue");
+var iransedaMinOption = new Option<string?>(
+    new[] { "--iranseda-min", "-j" },
+    "Output file path for minified iranseda catalogue");
+
 
 // Add the options to a root command:
 var rootCommand = new RootCommand
 {
-    minifyOption,
     bundleOption,
-    iransedaOption
+    bundleMinOption,
+    iransedaOption,
+    iransedaMinOption
 };
 
 rootCommand.Description = "Mashrouh Cataloger";
 
-rootCommand.SetHandler((bool minify, string bundle, string iranseda) =>
+rootCommand.SetHandler((
+    string bundle, string bundleMin,
+    string iranseda, string iransedaMin) =>
 {
     CatalogueBuilder builder = new();
 
-    if (!string.IsNullOrEmpty(iranseda))
+    if (!string.IsNullOrEmpty(iranseda) || !string.IsNullOrEmpty(iransedaMin))
     {
         builder.Iranseda();
         CatalogueBuilder? iransedaBuilder = builder.IransedaCatalogue();
         if (iransedaBuilder != null)
         {
             iransedaBuilder.Catalogue.ReleaseDate = DateTime.UtcNow;
-            iransedaBuilder.SaveCatalogue(iranseda, minify);
+
+            if (!string.IsNullOrEmpty(iranseda))
+                iransedaBuilder.SaveCatalogue(path: iranseda, minify: false);
+
+            if (!string.IsNullOrEmpty(iransedaMin))
+                iransedaBuilder.SaveCatalogue(path: iransedaMin, minify: true);
         }
     }
 
-    if (!string.IsNullOrEmpty(bundle))
+    if (builder.Catalogue.Channels == null)
+        WriteLine("No output was generated, because you did not select any channels! You may have to use the --help.");
+
+    if (!string.IsNullOrEmpty(bundle) || !string.IsNullOrEmpty(bundleMin))
     {
-        if (builder.Catalogue.Channels == null)
-        {
-            builder.Catalogue.Channels = new();
-            builder.Iranseda();
-        }
-        if (!builder.Catalogue.Channels.Any(c => c.Type == ChannelType.Iranseda))
-            builder.Iranseda();
-
         builder.Catalogue.ReleaseDate = DateTime.UtcNow;
-        builder.SaveCatalogue(bundle, minify);
+
+        if (!string.IsNullOrEmpty(bundle))
+            builder.SaveCatalogue(path: bundle, minify: false);
+
+        if (!string.IsNullOrEmpty(bundleMin))
+            builder.SaveCatalogue(path: bundleMin, minify: true);
     }
 
-}, minifyOption, bundleOption, iransedaOption);
+}, bundleOption, bundleMinOption,
+    iransedaOption, iransedaMinOption);
 
-// Parse the incoming args and invoke the handler
 return rootCommand.Invoke(args);

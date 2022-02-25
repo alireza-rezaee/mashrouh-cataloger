@@ -20,7 +20,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.101
+        dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
@@ -30,10 +30,12 @@ jobs:
         NOW=$(TZ=":Asia/Tehran" date +%F)
         mkdir -p ./catalogs/
         dotnet run --project ./src/MashrouhCataloger/MashrouhCataloger.csproj -- \
-          -b ./catalogs/catalog-$NOW.json \
-          -i ./catalogs/catalog-$NOW-iranseda.json
-          ln -Pf catalogs/catalog-$NOW.json catalog-latest.json
-          ln -Pf catalogs/catalog-$NOW-iranseda.json catalog-latest-iranseda.json
+          --bundle ./catalogs/catalog.bundle.$NOW.json --bundle-min ./catalogs/catalog.bundle.$NOW.min.json \
+          --iranseda ./catalogs/catalog.iranseda.$NOW.json --iranseda-min ./catalogs/catalog.iranseda.$NOW.min.json
+          ln -Pf ./catalogs/catalog.bundle.$NOW.json ./catalog.bundle.latest.json
+          ln -Pf ./catalogs/catalog.bundle.$NOW.min.json ./catalog.bundle.latest.min.json
+          ln -Pf ./catalogs/catalog.iranseda.$NOW.json ./catalog.iranseda.latest.json
+          ln -Pf ./catalogs/catalog.iranseda.$NOW.min.json ./catalog.iranseda.latest.min.json
     - name: Commit files
       run: |
         git config --global user.name 'github-actions'
