@@ -1,5 +1,7 @@
 # Mashrouh Cataloger
 
+[![.NET Core](https://github.com/alireza-rezaee/mashrouh-cataloger/actions/workflows/dotnet.yml/badge.svg)](https://github.com/alireza-rezaee/mashrouh-cataloger/actions/workflows/dotnet.yml) [![Deployment](https://github.com/alireza-rezaee/mashrouh-cataloger/actions/workflows/publisher.yml/badge.svg)](https://github.com/alireza-rezaee/mashrouh-cataloger/actions/workflows/publisher.yml)
+
 <div dir="rtl">
 
 این پروژه از طریق تهیه فایل کاتولوگ، زمینه دسترسی راحت به نسخه گفتاری و نوشتاریِ برخط مشروح مذاکرات [مجلس شورای اسلامی](https://www.parliran.ir/) را فراهم می‌کند. آخرین نسخه کاتالوگ، با نشانی زیر در دسترس قرار دارد و با برنامه ریزی منظم به‌روز خواهد شد:
