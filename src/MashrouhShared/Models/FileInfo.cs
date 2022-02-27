@@ -8,7 +8,6 @@ namespace MashrouhShared.Models
     {
 #nullable enable
         private Uri? _fileUrl;
-
         public string? Description { get; set; }
         public Uri? FileUrl
         {

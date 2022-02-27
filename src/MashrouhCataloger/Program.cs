@@ -1,4 +1,5 @@
-﻿using MashrouhCataloger;
+﻿using System;
+using MashrouhCataloger;
 using System.CommandLine;
 using static System.Console;
 
@@ -55,16 +56,16 @@ rootCommand.SetHandler((
     if (builder.Catalogue.Channels == null)
         WriteLine("No output was generated, because you did not select any channels! You may have to use the --help.");
 
-    if (!string.IsNullOrEmpty(bundle) || !string.IsNullOrEmpty(bundleMin))
-    {
-        builder.Catalogue.ReleaseDate = DateTime.UtcNow;
+    if (string.IsNullOrEmpty(bundle) && string.IsNullOrEmpty(bundleMin))
+        return;
+    
+    builder.Catalogue.ReleaseDate = DateTime.UtcNow;
 
-        if (!string.IsNullOrEmpty(bundle))
-            builder.SaveCatalogue(path: bundle, minify: false);
+    if (!string.IsNullOrEmpty(bundle))
+        builder.SaveCatalogue(path: bundle, minify: false);
 
-        if (!string.IsNullOrEmpty(bundleMin))
-            builder.SaveCatalogue(path: bundleMin, minify: true);
-    }
+    if (!string.IsNullOrEmpty(bundleMin))
+        builder.SaveCatalogue(path: bundleMin, minify: true);
 
 }, bundleOption, bundleMinOption,
     iransedaOption, iransedaMinOption);
