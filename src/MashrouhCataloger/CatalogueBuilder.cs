@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MashrouhCataloger.Channels;
-using MashrouhCataloger.Models;
 using Newtonsoft.Json;
-using MashrouhCataloger.Helpers.Enums;
+using MashrouhShared.Models;
+using MashrouhShared.Helpers.Enums;
 
 namespace MashrouhCataloger
 {

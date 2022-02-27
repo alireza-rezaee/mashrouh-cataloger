@@ -1,8 +1,8 @@
-using MashrouhCataloger.Models;
-using MashrouhCataloger.Helpers.Enums;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using MD.PersianDateTime.Standard;
+using MashrouhShared.Models;
+using MashrouhShared.Helpers.Enums;
 
 namespace MashrouhCataloger.Channels
 {

@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{27ABE941-73D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MashrouhCataloger", "src\MashrouhCataloger\MashrouhCataloger.csproj", "{BC84C02F-DC41-4322-AE01-226C483E536A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MashrouhShared", "src\MashrouhShared\MashrouhShared.csproj", "{DBB93084-3191-43BB-9E30-AC9D48418585}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +22,13 @@ Global
 		{BC84C02F-DC41-4322-AE01-226C483E536A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC84C02F-DC41-4322-AE01-226C483E536A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC84C02F-DC41-4322-AE01-226C483E536A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB93084-3191-43BB-9E30-AC9D48418585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB93084-3191-43BB-9E30-AC9D48418585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB93084-3191-43BB-9E30-AC9D48418585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB93084-3191-43BB-9E30-AC9D48418585}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BC84C02F-DC41-4322-AE01-226C483E536A} = {27ABE941-73DA-4091-B31E-5D85B85EF637}
+		{DBB93084-3191-43BB-9E30-AC9D48418585} = {27ABE941-73DA-4091-B31E-5D85B85EF637}
 	EndGlobalSection
 EndGlobal

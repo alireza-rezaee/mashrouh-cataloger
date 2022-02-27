@@ -1,18 +1,88 @@
 {
-  "ReleaseDate": "2022-02-26T20:36:10.0346946Z",
+  "ReleaseDate": "2022-02-27T10:49:34.9041329Z",
   "Channels": [
     {
       "Type": 0,
       "Title": "Iranseda",
       "Description": "ایران صدا - رادیو فرهنگ",
       "Url": "https://radio.iranseda.ir/Program/?VALID=TRUE&ch=16&m=065139",
-      "ReleaseDate": "2022-02-26T20:35:21.6158789Z",
+      "ReleaseDate": "2022-02-27T10:48:46.0994215Z",
       "Sessions": [
         {
-          "Date": {
-            "DateTime": "2022-02-26T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-27T00:00:00",
+          "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149636931"
+        },
+        {
+          "Date": "2022-02-27T00:00:00",
+          "Description": "پخش زنده مذاكرات نمایندگان در مجلس شورای اسلامی",
+          "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149636930",
+          "FileInfos": [
+            {
+              "Description": "08:00 - 08:30",
+              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1691746_207122",
+              "FileUrlMirrors": [
+                "http://headend2.iranseda.ir/downloadFile/?vid=1691746_207122",
+                "http://headend1.iranseda.ir/downloadFile/?vid=1733243_206",
+                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=08_00&d=2/27/2022"
+              ]
+            },
+            {
+              "Description": "08:30 - 09:00",
+              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1691764_207122",
+              "FileUrlMirrors": [
+                "http://headend2.iranseda.ir/downloadFile/?vid=1691764_207122",
+                "http://headend1.iranseda.ir/downloadFile/?vid=1733263_206",
+                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=08_30&d=2/27/2022"
+              ]
+            },
+            {
+              "Description": "09:00 - 09:30",
+              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1691782_207122",
+              "FileUrlMirrors": [
+                "http://headend2.iranseda.ir/downloadFile/?vid=1691782_207122",
+                "http://headend1.iranseda.ir/downloadFile/?vid=1733284_206",
+                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=09_00&d=2/27/2022"
+              ]
+            },
+            {
+              "Description": "09:30 - 10:00",
+              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1691800_207122",
+              "FileUrlMirrors": [
+                "http://headend2.iranseda.ir/downloadFile/?vid=1691800_207122",
+                "http://headend1.iranseda.ir/downloadFile/?vid=1733305_206",
+                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=09_30&d=2/27/2022"
+              ]
+            },
+            {
+              "Description": "10:00 - 10:30",
+              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1691818_207122",
+              "FileUrlMirrors": [
+                "http://headend2.iranseda.ir/downloadFile/?vid=1691818_207122",
+                "http://headend1.iranseda.ir/downloadFile/?vid=1733326_206",
+                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=10_00&d=2/27/2022"
+              ]
+            },
+            {
+              "Description": "10:30 - 11:00",
+              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1691835_207122",
+              "FileUrlMirrors": [
+                "http://headend2.iranseda.ir/downloadFile/?vid=1691835_207122",
+                "http://headend1.iranseda.ir/downloadFile/?vid=1733347_206",
+                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=10_30&d=2/27/2022"
+              ]
+            },
+            {
+              "Description": "11:00 - 11:30",
+              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1691854_207122",
+              "FileUrlMirrors": [
+                "http://headend2.iranseda.ir/downloadFile/?vid=1691854_207122",
+                "http://headend1.iranseda.ir/downloadFile/?vid=1733368_206"
+              ]
+            }
+          ]
+        },
+        {
+          "Date": "2022-02-26T00:00:00",
           "Description": "پخش زنده مذاكرات نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149636892",
           "FileInfos": [
@@ -55,10 +125,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-26T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-26T00:00:00",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149632168",
           "FileInfos": [
             {
@@ -126,10 +193,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-26T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-26T00:00:00",
           "Description": "پخش زنده مذاكرات نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149632218",
           "FileInfos": [
@@ -198,10 +262,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-23T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-23T00:00:00",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149632370",
           "FileInfos": [
             {
@@ -269,10 +330,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-23T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-23T00:00:00",
           "Description": "پخش زنده مذاكرات نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149632288",
           "FileInfos": [
@@ -341,10 +399,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-22T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-22T00:00:00",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149632172",
           "FileInfos": [
             {
@@ -412,10 +467,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-22T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-22T00:00:00",
           "Description": "پخش زنده مذاكرات نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149632323",
           "FileInfos": [
@@ -484,10 +536,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-21T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-21T00:00:00",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149632424",
           "FileInfos": [
             {
@@ -555,10 +604,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-21T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-21T00:00:00",
           "Description": "پخش زنده مذاكرات نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149632136",
           "FileInfos": [
@@ -627,10 +673,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-20T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-20T00:00:00",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149632201",
           "FileInfos": [
             {
@@ -698,10 +741,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-20T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-20T00:00:00",
           "Description": "پخش زنده مذاكرات نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149632240",
           "FileInfos": [
@@ -770,10 +810,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-08T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-08T00:00:00",
           "Description": "مذاكرات نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149610060",
           "FileInfos": [
@@ -816,10 +853,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-07T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-07T00:00:00",
           "Description": "مذاكرات نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149607688",
           "FileInfos": [
@@ -861,10 +895,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-02-06T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-02-06T00:00:00",
           "Description": "پخش زنده مذاكرات نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149606071",
           "FileInfos": [
@@ -933,10 +964,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-01-30T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-01-30T00:00:00",
           "Description": "پخش زنده مذاكرات علنی نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149597815",
           "FileInfos": [
@@ -1005,10 +1033,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-01-26T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-01-26T00:00:00",
           "Description": "پخش زنده مذاكرات علنی نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149593174",
           "FileInfos": [
@@ -1079,10 +1104,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-01-25T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-01-25T00:00:00",
           "Description": "پخش زنده مذاكرات علنی نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149593051",
           "FileInfos": [
@@ -1153,10 +1175,7 @@
           ]
         },
         {
-          "Date": {
-            "DateTime": "2022-01-23T00:00:00",
-            "PersianNumber": false
-          },
+          "Date": "2022-01-23T00:00:00",
           "Description": "پخش زنده مذاكرات علنی نمایندگان در مجلس شورای اسلامی",
           "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149593041",
           "FileInfos": [
@@ -1220,150 +1239,6 @@
               "FileUrlMirrors": [
                 "http://headend2.iranseda.ir/downloadFile/?vid=1664045_207122",
                 "http://headend1.iranseda.ir/downloadFile/?vid=1699351_206"
-              ]
-            }
-          ]
-        },
-        {
-          "Date": {
-            "DateTime": "2022-01-12T00:00:00",
-            "PersianNumber": false
-          },
-          "Description": "پخش زنده مذاكرات نمایندگان در مجلس شورای اسلامی",
-          "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149555496",
-          "FileInfos": [
-            {
-              "Description": "08:00 - 08:30",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1654499_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1654499_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1691680_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=08_00&d=1/12/2022"
-              ]
-            },
-            {
-              "Description": "08:30 - 09:00",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1654517_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1654517_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1691700_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=08_30&d=1/12/2022"
-              ]
-            },
-            {
-              "Description": "09:00 - 09:30",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1654535_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1654535_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1691722_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=09_00&d=1/12/2022"
-              ]
-            },
-            {
-              "Description": "09:30 - 10:00",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1654553_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1654553_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1691743_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=09_30&d=1/12/2022"
-              ]
-            },
-            {
-              "Description": "10:00 - 10:30",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1654570_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1654570_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1691764_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=10_00&d=1/12/2022"
-              ]
-            },
-            {
-              "Description": "10:30 - 11:00",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1654588_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1654588_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1691784_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=10_30&d=1/12/2022"
-              ]
-            },
-            {
-              "Description": "11:00 - 11:30",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1654607_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1654607_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1691805_206"
-              ]
-            }
-          ]
-        },
-        {
-          "Date": {
-            "DateTime": "2022-01-11T00:00:00",
-            "PersianNumber": false
-          },
-          "Description": "پخش زنده مذاكرات نمایندگان در مجلس شورای اسلامی",
-          "Url": "https://radio.iranseda.ir/epgarchivePart/?VALID=TRUE&ch=16&e=149552233",
-          "FileInfos": [
-            {
-              "Description": "08:00 - 08:30",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1653635_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1653635_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1690672_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=08_00&d=1/11/2022"
-              ]
-            },
-            {
-              "Description": "08:30 - 09:00",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1653652_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1653652_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1690692_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=08_30&d=1/11/2022"
-              ]
-            },
-            {
-              "Description": "09:00 - 09:30",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1653671_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1653671_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1690713_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=09_00&d=1/11/2022"
-              ]
-            },
-            {
-              "Description": "09:30 - 10:00",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1653689_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1653689_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1690734_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=09_30&d=1/11/2022"
-              ]
-            },
-            {
-              "Description": "10:00 - 10:30",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1653706_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1653706_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1690755_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=10_00&d=1/11/2022"
-              ]
-            },
-            {
-              "Description": "10:30 - 11:00",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1653724_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1653724_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1690775_206",
-                "http://radio.iranseda.ir/downloadfile/?ch=16&ti=10_30&d=1/11/2022"
-              ]
-            },
-            {
-              "Description": "11:00 - 11:30",
-              "FileUrl": "http://headend2.iranseda.ir/downloadFile/?vid=1653743_207122",
-              "FileUrlMirrors": [
-                "http://headend2.iranseda.ir/downloadFile/?vid=1653743_207122",
-                "http://headend1.iranseda.ir/downloadFile/?vid=1690795_206"
               ]
             }
           ]
