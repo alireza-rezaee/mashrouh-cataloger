@@ -7,10 +7,11 @@ namespace MashrouhGrabber.Models;
 
 public record File
 {
-    public Guid Id { get; set; }
-    public ChannelType Channel { get; set; }
+    public string? Path { get; set; }
+    public string? Channel { get; set; }
     public string? Description { get; set; }
-    public Guid SessionId { get; set; }
-    public Uri? SessionUrl { get; set; }
-    public List<Uri>? SessionMirrorUrl { get; set; }
+    public Uri? Url { get; set; }
+    public Uri? UrlMirror1 { get; set; }
+    public Uri? UrlMirror2 { get; set; }
+    public Uri? SessionPage { get; set; }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Globalization;
 using System.Linq;
@@ -73,21 +74,36 @@ public class Grabber
         if (_catalogue.Channels == null || !_catalogue.Channels.Any())
             return;
 
+        foreach (var channel in _catalogue.Channels)
+        {
+            if (string.IsNullOrEmpty(channel.Title))
+                throw new InvalidOperationException("Channel Title not specified.");
+
+            if (channel.Sessions == null || !channel.Sessions.Any())
+                continue;
+
+            foreach (var session in channel.Sessions)
+                if (session.Url == null)
+                    throw new Exception("One or more Session URLs are Null.");
+        }
+
         List<File> files = new();
 
         foreach (var channel in _catalogue.Channels)
         {
+            Directory.CreateDirectory(Path.Combine(outputDirectory, channel.Title));
+
             if (channel.Sessions == null || !channel.Sessions.Any())
                 continue;
+
+            foreach (var session in channel.Sessions)
+                if (session.Url == null)
+                    throw new Exception("One or more Session URLs are Null.");
 
             foreach (var session in channel.Sessions)
             {
                 if (session.FileInfos == null || !session.FileInfos.Any())
                     continue;
-
-                var sessionId = Guid.NewGuid();
-
-                Directory.CreateDirectory(Path.Combine(outputDirectory, sessionId.ToString()));
 
                 foreach (var fileInfo in session.FileInfos)
                 {
@@ -96,26 +112,29 @@ public class Grabber
                         || !fileInfo.FileUrlMirrors.Any())
                         continue;
 
+                    List<Uri> mirrorUris = fileInfo.FileUrlMirrors.SkipWhile(uri => uri == fileInfo.FileUrl).ToList();
+
                     var file = new File()
                     {
-                        Id = Guid.NewGuid(),
-                        Channel = channel.Type,
+                        Path = Path.Combine(outputDirectory, channel.Title, $"{Guid.NewGuid()}.mp4"),
+                        Channel = channel.Type.ToString(),
                         Description = fileInfo.Description,
-                        SessionMirrorUrl = fileInfo.FileUrlMirrors,
-                        SessionId = sessionId,
-                        SessionUrl = session.Url
+                        Url = fileInfo.FileUrl,
+                        SessionPage = session.Url,
+                        UrlMirror1 = mirrorUris.Any() ? mirrorUris.ElementAt(0) : null,
+                        UrlMirror2 = mirrorUris.Count >= 2 ? mirrorUris.ElementAt(1) : null
                     };
 
                     await DownloadFile(
                         fileInfo: fileInfo,
-                        path: Path.Combine(outputDirectory, sessionId.ToString(), $"{file.Id.ToString()}.mp4"));
+                        path: file.Path);
 
                     files.Add(file);
                 }
             }
         }
 
-        await using var writer = new StreamWriter("dataset.csv");
+        await using var writer = new StreamWriter(Path.Combine(outputDirectory, "./data.csv"));
         await using var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
         await csv.WriteRecordsAsync(files);
     }
